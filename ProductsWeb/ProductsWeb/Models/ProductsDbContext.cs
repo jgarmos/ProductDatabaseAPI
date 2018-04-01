@@ -9,6 +9,17 @@ namespace ProductsWeb.Models
     public class ProductsDbContext :DbContext
     {
         public DbSet<Product> Products { get; set; }
+
+        public ProductsDbContext() : base()
+        {
+
+        }
+        public static ProductsDbContext Create()
+        {
+            return new ProductsDbContext();
+        }
+
     }
+
 
 }
