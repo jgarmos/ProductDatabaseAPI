@@ -33,7 +33,7 @@ namespace ProductsWeb.Migrations
                         Id = products.Count,
                         Name = product.Name,
                         Description = product.Description,
-                        Category = product.Description
+                        Category = product.Category
                     }
                     );
                 }
