@@ -195,8 +195,17 @@
     <Compile Include="Migrations\201803311232401_UpdateTableProduct_new_column_name.Designer.cs">
       <DependentUpon>201803311232401_UpdateTableProduct_new_column_name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804011622592_Create_Table_categories.cs" />
+    <Compile Include="Migrations\201804011622592_Create_Table_categories.Designer.cs">
+      <DependentUpon>201804011622592_Create_Table_categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804011632248_Add_fk_categories_in_table_Products.cs" />
+    <Compile Include="Migrations\201804011632248_Add_fk_categories_in_table_Products.Designer.cs">
+      <DependentUpon>201804011632248_Add_fk_categories_in_table_Products.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
@@ -281,6 +290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803311232401_UpdateTableProduct_new_column_name.resx">
       <DependentUpon>201803311232401_UpdateTableProduct_new_column_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804011622592_Create_Table_categories.resx">
+      <DependentUpon>201804011622592_Create_Table_categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804011632248_Add_fk_categories_in_table_Products.resx">
+      <DependentUpon>201804011632248_Add_fk_categories_in_table_Products.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
