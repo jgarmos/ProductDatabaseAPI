@@ -6,6 +6,7 @@ using System.Web;
 
 namespace ProductsWeb.Models
 {
+
     public class ProductsDbContext :DbContext
     {
         public DbSet<Product> Products { get; set; }
@@ -13,14 +14,24 @@ namespace ProductsWeb.Models
 
         public ProductsDbContext() : base()
         {
-            Database.SetInitializer<ProductsDbContext>(new DropCreateDatabaseAlways<ProductsDbContext>());
+            Database.SetInitializer<ProductsDbContext>(new CreateDatabaseIfNotExists<ProductsDbContext>());
         }
         public static ProductsDbContext Create()
         {
             return new ProductsDbContext();
         }
 
+
+
+        private class ProductsDBInitializer : DropCreateDatabaseAlways<ProductsDbContext>
+        {
+            protected override void Seed(ProductsDbContext context)
+            {
+                base.Seed(context);
+            }
+        }
     }
+    
 
 
 }

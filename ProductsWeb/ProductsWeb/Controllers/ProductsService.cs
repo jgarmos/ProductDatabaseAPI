@@ -38,18 +38,22 @@ namespace ProductsWeb.Controllers
             _context.SaveChanges();
         }
 
+        public ICollection<Category> GetAllCategories()
+        {
+            return _context.Categories.ToList();
+        }
+
+        public ICollection<Product> GetAllProductsByCategoryName(string categoryName)
+        {
+            
+            var asd = from p in _context.Products
+                      join c in _context.Categories on p.CategoryId equals c.Id
+                      where c.Name == categoryName
+                      select p;
 
 
+            return asd.ToList();
+        }
 
-
-
-
-
-        //public ICollection<OrderCommissionCode> GetOrderCommissionCodes(Guid orderId)
-        //{
-        //    return _repositoryContainer.Ord()erCommissionCodeRepository
-        //        .GetQuery()
-        //        .Where(occ => occ.OrderId == orderId).ToList();
-        //}
     }
 }

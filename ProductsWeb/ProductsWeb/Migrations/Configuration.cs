@@ -16,28 +16,40 @@ namespace ProductsWeb.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
-
+        //private class ProductJson
+        //{
+        //    public int Id { get; set; }
+        //    public string Name { get; set; }
+        //    public string Description { get; set; }
+        //    public string Category { get; set; }
+        //}
         protected override void Seed(ProductsDbContext context)
         {
-            using (StreamReader r = new StreamReader("C:/Users/Javier/Source/Repos/ProductDatabaseAPI/ProductsWeb/ProductsWeb/App_Data/products.json"))
-            {
-                string json = r.ReadToEnd();
-                List<Product> products = JsonConvert.DeserializeObject<List<Product>>(json);
-                foreach (var product in products)
-                {
-                    context.Products.AddOrUpdate(p => p.Id,
-                    new Product()
-                    {
-                        Id = products.Count,
-                        Name = product.Name,
-                        Description = product.Description,
-                        Category = product.Category
-                    }
-                    );
-                }
-            }
+            //using (StreamReader r = new StreamReader("C:/Users/Javier/Source/Repos/ProductDatabaseAPI/ProductsWeb/ProductsWeb/App_Data/products.json"))
+            //{
+            //    string json = r.ReadToEnd();
+            //    List<ProductJson> products = JsonConvert.DeserializeObject<List<ProductJson>>(json);
+            //    foreach (var product in products)
+            //    {
+            //        context.Categories.AddOrUpdate(c => c.Name,
+            //        new Category()
+            //        {
+            //            Name = product.Name,
+            //        }
+            //        );
+            //        context.Products.AddOrUpdate(p => p.Id,
+            //        new Product()
+            //        {
+            //            Id = products.Count,
+            //            Name = product.Name,
+            //            Description = product.Description,
+            //            CategoryId = context.Categories.Where(c => c.Name == product.Name).FirstOrDefault().Id
+            //        }
+            //        );
+            //    }
+            //}
 
         }
 

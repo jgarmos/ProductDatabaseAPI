@@ -29,5 +29,18 @@ namespace ProductsWeb.Controllers
         /// <returns></returns>
         void CreateProduct(Product product);
 
+        /// <summary>
+        /// Returns all categories
+        /// </summary>
+        /// <returns></returns>
+        ICollection<Category> GetAllCategories();
+
+        /// <summary>
+        /// Returns all products from a specific Category
+        /// </summary>
+        /// <returns></returns>
+        /// /// <param name="categoryName"></para
+        ICollection<Product> GetAllProductsByCategoryName(string categoryName);
+
     }
 }
