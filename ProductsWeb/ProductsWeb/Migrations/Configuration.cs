@@ -18,34 +18,44 @@ namespace ProductsWeb.Migrations
         {
             AutomaticMigrationsEnabled = true;
         }
-        //private class ProductJson
-        //{
-        //    public int Id { get; set; }
-        //    public string Name { get; set; }
-        //    public string Description { get; set; }
-        //    public string Category { get; set; }
-        //}
+        private class ProductJson
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public string Category { get; set; }
+        }
         protected override void Seed(ProductsDbContext context)
         {
-            //using (StreamReader r = new StreamReader("C:/Users/Javier/Source/Repos/ProductDatabaseAPI/ProductsWeb/ProductsWeb/App_Data/products.json"))
+            //using (StreamReader r = new StreamReader("C:\\Users\\javiergarcia\\Source\\Repos\\ProductDatabaseAPI\\ProductsWeb\\ProductsWeb\\App_Data\\products.json"))
             //{
             //    string json = r.ReadToEnd();
-            //    List<ProductJson> products = JsonConvert.DeserializeObject<List<ProductJson>>(json);
-            //    foreach (var product in products)
+            //    List<ProductJson> productsJson = JsonConvert.DeserializeObject<List<ProductJson>>(json);
+            //    foreach (var productJson in productsJson)
             //    {
-            //        context.Categories.AddOrUpdate(c => c.Name,
-            //        new Category()
+            //        var query = from c in context.Categories
+            //            where c.Name == productJson.Category
+            //                    select c;
+
+            //        bool existsCategory = query.FirstOrDefault() != null;
+
+            //        if (!existsCategory)
             //        {
-            //            Name = product.Name,
+            //            context.Categories.AddOrUpdate(c => c.Name,
+            //                new Category()
+            //                {
+            //                    Name = productJson.Name,
+            //                }
+            //            );
             //        }
-            //        );
+ 
             //        context.Products.AddOrUpdate(p => p.Id,
             //        new Product()
             //        {
-            //            Id = products.Count,
-            //            Name = product.Name,
-            //            Description = product.Description,
-            //            CategoryId = context.Categories.Where(c => c.Name == product.Name).FirstOrDefault().Id
+            //            Id = productsJson.Count,
+            //            Name = productJson.Name,
+            //            Description = productJson.Description,
+            //            CategoryId = query.ToList().FirstOrDefault().Id //???????????????????????
             //        }
             //        );
             //    }

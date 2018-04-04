@@ -85,6 +85,18 @@ namespace ProductsWeb.Controllers
             return Ok(productsDto);
         }
 
+        public IHttpActionResult DeleteProductById(int productId)
+        {
+            _productsService.DeleteProductById(productId);
+
+            return Ok();
+        }
+
+
+        //void DeleteProductById(int productId);
+
+        //void CreateProduct(Product product);
+
 
     }
 }
