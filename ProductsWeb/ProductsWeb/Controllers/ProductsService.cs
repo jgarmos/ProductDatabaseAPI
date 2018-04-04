@@ -45,14 +45,13 @@ namespace ProductsWeb.Controllers
 
         public ICollection<Product> GetAllProductsByCategoryName(string categoryName)
         {
-            
-            var asd = from p in _context.Products
+            var query = from p in _context.Products
                       join c in _context.Categories on p.CategoryId equals c.Id
                       where c.Name == categoryName
                       select p;
 
 
-            return asd.ToList();
+            return query.ToList();
         }
 
     }
